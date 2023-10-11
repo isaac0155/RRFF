@@ -1,0 +1,69 @@
+
+   <nav class="navbar navbar-expand-lg colorNav">
+        <div class="container">
+            <a class="navbar-brand text-white" href="/">
+            Requerimientos Fiscales</a>
+            <button class="navbar-toggler" id="newLinkBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto ">
+                    {{#if user.Administrador}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/links/panel" role="button">
+                                Panel de control
+                            </a>
+                        </li>
+                    {{/if}}
+                    {{#if user.respAmbulancia}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/links/ambulancia/emergencias" role="button">
+                                Mi Ambulancia
+                            </a>
+                        </li>
+                    {{/if}}
+                    {{#if user.adminSucursal}}
+                        <li class="nav-item ">
+                            <a class="nav-link " style="color:#1fb919">
+                                AS {{user.usuario}}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/links/panelAdminSuc" role="button">
+                                Gestión Centros
+                            </a>
+                        </li>
+                    {{/if}}
+                    {{#if user}}    
+                        <li class="nav-item">
+                            <a class="nav-link position-relative text-white" id="newLink" href="/links/emergencias" role="button">
+                                Consultar un Requerimiento
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/profile" role="button">
+                                Mi Perfil
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/logout" role="button">
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/signin" role="button">
+                                Iniciar Sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/signup" role="button">
+                                Registrarse
+                            </a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
